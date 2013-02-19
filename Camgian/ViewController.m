@@ -105,16 +105,16 @@ static NSUInteger numberOfPages = 3;
     //Create image
     if(page == 0)
     {
-        imageName = @"FakeGraph.png";
+        imageName = @"TempGraph.png";
         
     }
     else if(page == 1)
     {
-        imageName = @"FakeGraph2.png";
+        imageName = @"RangeGraph.png";
     }
     else
     {
-        imageName = @"FakeGraph3.png";
+        imageName = @"FillGraph.png";
     }
     
     UIImage *image = [UIImage imageNamed:imageName];
