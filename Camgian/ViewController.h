@@ -13,14 +13,14 @@
 {
     UIImageView *imageView;
     BOOL pageControlUsed;
-    NSMutableArray *dummyImages;
+    NSMutableArray *graphArray;
     NSMutableArray *tableArray;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
-@property (nonatomic, retain) NSMutableArray *dummyImages;
+@property (nonatomic, retain) NSMutableArray *graphArray;
 
 - (IBAction)changePage:(id)sender;
 
