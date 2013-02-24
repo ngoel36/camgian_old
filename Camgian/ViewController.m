@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TUTViewController.h"
 
 static NSUInteger numberOfPages = 3;
 
@@ -17,17 +18,17 @@ static NSUInteger numberOfPages = 3;
 
 @implementation ViewController
 
-@synthesize scrollView, pageControl, dummyImages, tableView;
+@synthesize scrollView, pageControl, graphArray, tableView;
 
 - (void)viewDidLoad
 {
     //Container for iamges
-    NSMutableArray *images = [[NSMutableArray alloc] init];
+    NSMutableArray *graphs = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < numberOfPages; i++)
     {
-		[images addObject:[NSNull null]];
+		[graphs addObject:[NSNull null]];
     }
-    dummyImages = images;
+    graphArray = graphs;
 
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.view.bounds;
@@ -100,50 +101,25 @@ static NSUInteger numberOfPages = 3;
         return;
     }
     
-    NSString* imageName;
     
-    //Create image
-    if(page == 0)
-    {
-        imageName = @"TempGraph.png";
-        
-    }
-    else if(page == 1)
-    {
-        imageName = @"RangeGraph.png";
-    }
-    else
-    {
-        imageName = @"FillGraph.png";
-    }
-    
-    UIImage *image = [UIImage imageNamed:imageName];
-    
-    CGRect frame = scrollView.frame;
-    frame.origin.x = frame.size.width * page;
-    frame.origin.y = 0;
-    
-    // replace the placeholder if necessary
-    imageView = [dummyImages objectAtIndex:page];
-    if ((NSNull *)imageView == [NSNull null])
-    {
-        imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = image;
-        [dummyImages replaceObjectAtIndex:page withObject:imageView];
-    }
-    
-    
-    /* For future graphs which use UIView
-    MyViewController *controller = [viewControllers objectAtIndex:page];
+    //For future graphs which use UIView
+    TUTViewController *controller = [graphArray objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [[MyViewController alloc] initWithPageNumber:page];
-        [viewControllers replaceObjectAtIndex:page withObject:controller];
-        [controller release];
-    }*/
+        controller = [[TUTViewController alloc] initWithPageNumber:page];
+        [graphArray replaceObjectAtIndex:page withObject:controller];
+    }
     
+    if (controller.view.superview == nil)
+    {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0;
+        controller.view.frame = frame;
+        [scrollView addSubview:controller.view];
+    }
     // add the controller's view to the scroll view
-    [scrollView addSubview:imageView];
+    
         
     /*NSDictionary *numberItem = [self.contentList objectAtIndex:page];
     controller.numberImage.image = [UIImage imageNamed:[numberItem valueForKey:ImageKey]];
