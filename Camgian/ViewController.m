@@ -102,10 +102,6 @@ static NSUInteger numberOfPages = 3;
     }
     
     
-    CGRect frame = scrollView.frame;
-    frame.origin.x = frame.size.width * page;
-    frame.origin.y = 0;
-    
     //For future graphs which use UIView
     TUTViewController *controller = [graphArray objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
@@ -114,8 +110,16 @@ static NSUInteger numberOfPages = 3;
         [graphArray replaceObjectAtIndex:page withObject:controller];
     }
     
+    if (controller.view.superview == nil)
+    {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0;
+        controller.view.frame = frame;
+        [scrollView addSubview:controller.view];
+    }
     // add the controller's view to the scroll view
-    [scrollView addSubview:controller.view];
+    
         
     /*NSDictionary *numberItem = [self.contentList objectAtIndex:page];
     controller.numberImage.image = [UIImage imageNamed:[numberItem valueForKey:ImageKey]];

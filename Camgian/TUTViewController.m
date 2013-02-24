@@ -20,6 +20,7 @@
     return self;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
     NSMutableArray *data = [NSMutableArray array];
     [data addObject:[NSValue valueWithCGPoint:CGPointMake(-10, 10)]];
     [data addObject:[NSValue valueWithCGPoint:CGPointMake(-8, 95)]];
@@ -47,6 +48,8 @@
     
     self.scatterPlot = [[TUTSimpleScatterPlot alloc] initWithHostingView:_graphHostingView andData:data];
     [self.scatterPlot initialisePlot];
+	// Do any additional setup after loading the view, typically from a nib.
+   
 }
 
 - (void)viewDidUnload
@@ -59,11 +62,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
