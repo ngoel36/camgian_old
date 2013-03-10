@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
-#import "ViewController.h"
+//#import "ViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    LoginViewController *loginScreen = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    self.window.rootViewController = loginScreen;
     [self.window makeKeyAndVisible];
     return YES;
 }

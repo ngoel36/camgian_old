@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TUTViewController.h"
+#import "LoginViewController.h"
 
 static NSUInteger numberOfPages = 3;
 
@@ -22,19 +23,18 @@ static NSUInteger numberOfPages = 3;
 
 - (void)viewDidLoad
 {
-    //Container for iamges
-    NSMutableArray *graphs = [[NSMutableArray alloc] init];
-    for (unsigned i = 0; i < numberOfPages; i++)
-    {
-		[graphs addObject:[NSNull null]];
-    }
-    graphArray = graphs;
-
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"Tank Details";
+    
+    // Background Setup
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.view.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor blackColor] CGColor], (id)[[UIColor darkGrayColor] CGColor], nil];
     [self.view.layer insertSublayer:gradient atIndex:0];
     
+    // Scroll View Setup
     scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * numberOfPages, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -43,21 +43,24 @@ static NSUInteger numberOfPages = 3;
     scrollView.delegate = self;
     scrollView.layer.cornerRadius = 8.0f;
     
+    // Graph View Container
+    NSMutableArray *graphs = [[NSMutableArray alloc] init];
+    for (unsigned i = 0; i < numberOfPages; i++)
+    {
+		[graphs addObject:[NSNull null]];
+    }
+    graphArray = graphs;
+
+    // Table View Setup
     tableView.layer.cornerRadius = 8.0f;
     tableArray = [[NSMutableArray alloc] initWithObjects:@"Tank 1",@"Tank 2",@"Tank 3",@"Tank 4",@"Tank 5",@"Tank 6",@"Tank 7",@"Tank 8",@"Tank 9",nil];
     
-    //tableView.`
-    
-    //Initialize page control
+    // Initialize Page Control
     pageControl.numberOfPages = numberOfPages;
     pageControl.currentPage = 0;
     
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
-    
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,8 +104,7 @@ static NSUInteger numberOfPages = 3;
         return;
     }
     
-    
-    //For future graphs which use UIView
+    // Graph Views
     TUTViewController *controller = [graphArray objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
@@ -118,12 +120,6 @@ static NSUInteger numberOfPages = 3;
         controller.view.frame = frame;
         [scrollView addSubview:controller.view];
     }
-    // add the controller's view to the scroll view
-    
-        
-    /*NSDictionary *numberItem = [self.contentList objectAtIndex:page];
-    controller.numberImage.image = [UIImage imageNamed:[numberItem valueForKey:ImageKey]];
-    controller.numberTitle.text = [numberItem valueForKey:NameKey];*/
 }
 
 // At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
