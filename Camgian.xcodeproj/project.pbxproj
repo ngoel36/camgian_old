@@ -20,6 +20,10 @@
 		031CEA7C16CBE942006269E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 031CEA7B16CBE942006269E7 /* Default-568h@2x.png */; };
 		031CEA7F16CBE942006269E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031CEA7E16CBE942006269E7 /* ViewController.m */; };
 		031CEA8216CBE942006269E7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031CEA8016CBE942006269E7 /* ViewController.xib */; };
+		0321CF0416DBEBB800B91101 /* LoginViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0321CF0216DBEBB800B91101 /* LoginViewContoller.m */; };
+		0321CF0516DBEBB800B91101 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0321CF0316DBEBB800B91101 /* LoginViewController.xib */; };
+		0321CF0916DC67F400B91101 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0321CF0716DC67F400B91101 /* LocationViewController.m */; };
+		0321CF0A16DC67F400B91101 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0321CF0816DC67F400B91101 /* LocationViewController.xib */; };
 		3197192016D5420100B3E8D7 /* TUTSimpleScatterPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3197191F16D5420100B3E8D7 /* TUTSimpleScatterPlot.m */; };
 		3197197816D5464800B3E8D7 /* FillGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 3197197516D5464800B3E8D7 /* FillGraph.png */; };
 		3197197916D5464800B3E8D7 /* RangeGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 3197197616D5464800B3E8D7 /* RangeGraph.png */; };
@@ -48,6 +52,12 @@
 		031CEA7D16CBE942006269E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		031CEA7E16CBE942006269E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		031CEA8116CBE942006269E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		0321CF0116DBEBB800B91101 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0321CF0216DBEBB800B91101 /* LoginViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewContoller.m; sourceTree = "<group>"; };
+		0321CF0316DBEBB800B91101 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0321CF0616DC67F400B91101 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		0321CF0716DC67F400B91101 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		0321CF0816DC67F400B91101 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		3197191E16D5420100B3E8D7 /* TUTSimpleScatterPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUTSimpleScatterPlot.h; sourceTree = "<group>"; };
 		3197191F16D5420100B3E8D7 /* TUTSimpleScatterPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUTSimpleScatterPlot.m; sourceTree = "<group>"; };
 		3197197516D5464800B3E8D7 /* FillGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FillGraph.png; sourceTree = "<group>"; };
@@ -181,19 +191,12 @@
 		031CEA6B16CBE942006269E7 /* Camgian */ = {
 			isa = PBXGroup;
 			children = (
-				31971A2316D5525900B3E8D7 /* TUTViewController.xib */,
-				3197197B16D54DBD00B3E8D7 /* TUTViewController.h */,
-				3197197C16D54DBD00B3E8D7 /* TUTViewController.m */,
-				3197197516D5464800B3E8D7 /* FillGraph.png */,
-				3197197616D5464800B3E8D7 /* RangeGraph.png */,
-				3197197716D5464800B3E8D7 /* TempGraph.png */,
-				3197191E16D5420100B3E8D7 /* TUTSimpleScatterPlot.h */,
-				3197191F16D5420100B3E8D7 /* TUTSimpleScatterPlot.m */,
 				031CEA7416CBE942006269E7 /* AppDelegate.h */,
 				031CEA7516CBE942006269E7 /* AppDelegate.m */,
-				031CEA7D16CBE942006269E7 /* ViewController.h */,
-				031CEA7E16CBE942006269E7 /* ViewController.m */,
-				031CEA8016CBE942006269E7 /* ViewController.xib */,
+				0321CF0E16DC682200B91101 /* Details */,
+				0321CF0B16DC680400B91101 /* Graphing */,
+				0321CF0D16DC681F00B91101 /* Location */,
+				0321CF0C16DC681A00B91101 /* Login */,
 				031CEA6C16CBE942006269E7 /* Supporting Files */,
 			);
 			path = Camgian;
@@ -202,6 +205,9 @@
 		031CEA6C16CBE942006269E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3197197516D5464800B3E8D7 /* FillGraph.png */,
+				3197197616D5464800B3E8D7 /* RangeGraph.png */,
+				3197197716D5464800B3E8D7 /* TempGraph.png */,
 				0313CCE416D18BFC00DAF186 /* camgianlogo.png */,
 				031CEA6D16CBE942006269E7 /* Camgian-Info.plist */,
 				031CEA6E16CBE942006269E7 /* InfoPlist.strings */,
@@ -212,6 +218,48 @@
 				031CEA7B16CBE942006269E7 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0321CF0B16DC680400B91101 /* Graphing */ = {
+			isa = PBXGroup;
+			children = (
+				31971A2316D5525900B3E8D7 /* TUTViewController.xib */,
+				3197197B16D54DBD00B3E8D7 /* TUTViewController.h */,
+				3197197C16D54DBD00B3E8D7 /* TUTViewController.m */,
+				3197191E16D5420100B3E8D7 /* TUTSimpleScatterPlot.h */,
+				3197191F16D5420100B3E8D7 /* TUTSimpleScatterPlot.m */,
+			);
+			name = Graphing;
+			sourceTree = "<group>";
+		};
+		0321CF0C16DC681A00B91101 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0321CF0116DBEBB800B91101 /* LoginViewController.h */,
+				0321CF0216DBEBB800B91101 /* LoginViewContoller.m */,
+				0321CF0316DBEBB800B91101 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0321CF0D16DC681F00B91101 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0321CF0616DC67F400B91101 /* LocationViewController.h */,
+				0321CF0716DC67F400B91101 /* LocationViewController.m */,
+				0321CF0816DC67F400B91101 /* LocationViewController.xib */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		0321CF0E16DC682200B91101 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				031CEA7D16CBE942006269E7 /* ViewController.h */,
+				031CEA7E16CBE942006269E7 /* ViewController.m */,
+				031CEA8016CBE942006269E7 /* ViewController.xib */,
+			);
+			name = Details;
 			sourceTree = "<group>";
 		};
 		319719D216D5517F00B3E8D7 /* Libs */ = {
@@ -373,6 +421,8 @@
 				3197197916D5464800B3E8D7 /* RangeGraph.png in Resources */,
 				3197197A16D5464800B3E8D7 /* TempGraph.png in Resources */,
 				31971A2616D5525900B3E8D7 /* TUTViewController.xib in Resources */,
+				0321CF0516DBEBB800B91101 /* LoginViewController.xib in Resources */,
+				0321CF0A16DC67F400B91101 /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +438,8 @@
 				031CEA7F16CBE942006269E7 /* ViewController.m in Sources */,
 				3197192016D5420100B3E8D7 /* TUTSimpleScatterPlot.m in Sources */,
 				3197197D16D54DBD00B3E8D7 /* TUTViewController.m in Sources */,
+				0321CF0416DBEBB800B91101 /* LoginViewContoller.m in Sources */,
+				0321CF0916DC67F400B91101 /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
